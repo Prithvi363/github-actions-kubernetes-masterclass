@@ -2,11 +2,11 @@ name: CI
 
 on:
   push:
+    branches: [main]
 jobs:
+  build-and-push:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4  #clone the code
 
-       build-and-push:
-               runs-on: ubuntu-latest
-               steps:
-                       - uses: actions/checkout@v4  #clone the code
-
-                       - uses: docker/setup-buildx-actions@v4
+      - uses: docker/setup-buildx-actions@v4
